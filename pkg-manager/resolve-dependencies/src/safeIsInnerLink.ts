@@ -20,7 +20,7 @@ export async function safeIsInnerLink (
 
     if (isSubdir(opts.virtualStoreDir, link.target)) return true
 
-    return link.target as string
+    return link.target
   } catch (err: any) { // eslint-disable-line
     if (err.code === 'ENOENT') return true
 

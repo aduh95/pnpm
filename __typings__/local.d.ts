@@ -75,11 +75,6 @@ declare module 'graceful-git' {
   export = anything
 }
 
-declare module 'is-inner-link' {
-  const anything: any
-  export = anything
-}
-
 declare module 'is-port-reachable' {
   const anything: any
   export = anything

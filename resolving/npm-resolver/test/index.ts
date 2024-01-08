@@ -16,7 +16,7 @@ import tempy from 'tempy'
 
 const f = fixtures(__dirname)
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const isPositiveMeta = loadJsonFile.sync<any>(f.find('is-positive.json'))
+const isPositiveMeta = loadJsonFile.sync(f.find('is-positive.json'))
 const isPositiveMetaWithDeprecated = loadJsonFile.sync<any>(f.find('is-positive-with-deprecated.json'))
 const isPositiveMetaFull = loadJsonFile.sync<any>(f.find('is-positive-full.json'))
 const isPositiveBrokenMeta = loadJsonFile.sync<any>(f.find('is-positive-broken.json'))

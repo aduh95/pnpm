@@ -274,6 +274,8 @@ function buildTree (
   return childrenNodeIds
 }
 
+type DirectDep = PkgAddress | LinkedDependency
+
 /**
   * There may be cases where multiple dependencies have the same alias in the directDeps array.
   * E.g., when there is "is-negative: github:kevva/is-negative#1.0.0" in the package.json dependencies,
@@ -281,7 +283,10 @@ function buildTree (
   * In order to make sure that the latest 1.0.1 version is installed, we need to remove the duplicate dependency.
   * fix https://github.com/pnpm/pnpm/issues/6966
   */
-function dedupeSameAliasDirectDeps (directDeps: Array<PkgAddress | LinkedDependency>, wantedDependencies: Array<WantedDependency & { isNew?: boolean }>) {
+function dedupeSameAliasDirectDeps (
+  directDeps: DirectDep[],
+  wantedDependencies: Array<WantedDependency & { isNew?: boolean }>
+): DirectDep[] {
   const deps = new Map()
   for (const directDep of directDeps) {
     const { alias, normalizedPref } = directDep

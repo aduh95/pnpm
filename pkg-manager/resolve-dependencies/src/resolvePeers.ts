@@ -308,7 +308,7 @@ function resolvePeersOfNode<T extends PartialResolvedPackage> (
     node.children = node.children()
   }
   const children = node.children
-  const parentPkgs = Object.keys(children).length === 0
+  const parentPkgs: ParentRefs = Object.keys(children).length === 0
     ? parentParentPkgs
     : Object.assign(
       Object.create(parentParentPkgs),

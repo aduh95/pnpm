@@ -69,7 +69,7 @@
     "@types/ssri": "^7.1.4",
     "delay": "^5.0.0",
     "load-json-file": "^6.2.0",
-    "nock": "13.3.4",
+    "nock": "13.4.0",
     "normalize-path": "^3.0.0",
     "tempy": "^1.0.1"
   },

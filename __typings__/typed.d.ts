@@ -217,3 +217,11 @@ declare module 'npm-packlist' {
   function npmPacklist (opts: { path: string }): Promise<string[]>
   export = npmPacklist
 }
+
+declare module 'is-inner-link' {
+  function isInnerLink (parentDir: string, dir: string): Promise<{
+    isInner: boolean
+    target: string
+  }>
+  export = isInnerLink
+}
